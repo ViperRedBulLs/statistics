@@ -65,3 +65,27 @@ func Max(data []float64) (max float64) {
 	max = data[0]
 	return
 }
+
+// Sum is a function that functions to find the sum of all elements
+func Sum(data []float64) (result float64) {
+	result = 0
+	for _, value := range data {
+		result += value
+	}
+	return
+}
+
+// Range is a function to Finding the value of
+// the difference between the largest value and the smallest value
+func Range(data []float64) float64 {
+	min := Min(data)
+	max := Max(data)
+	return max - min
+}
+
+// Average is a function to get average of array
+func Average(data []float64) float64 {
+	n := len(data)
+	sum := Sum(data)
+	return sum / float64(n)
+}
