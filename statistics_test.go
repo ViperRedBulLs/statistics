@@ -9,11 +9,12 @@ import (
 var data = []float64{4, 3, 2, 1, 6, 8, 9, 0}
 
 var (
-	dataMedian float64 = 3.5
+	dataMedian         = 3.5
 	dataMin    float64 = 0
 	dataMax    float64 = 9
 	dataSum    float64 = 33
-	dataAvg    float64 = 4.125
+	dataAvg            = 4.125
+	dataRange          = dataMax - dataMin
 )
 
 // Testing Median
@@ -54,5 +55,14 @@ func TestAverage(t *testing.T) {
 
 	if statistics.Average(data) != dataAvg {
 		t.Errorf("Error `AVERAGE` of `%v` should `%v`", data, dataSum)
+	}
+}
+
+// TestRange
+func TestRange(t *testing.T) {
+	t.Log("Testing Range")
+
+	if statistics.Range(data) != dataRange {
+		t.Errorf("Error `RANGE` of `#{data}` should `#{dataRange}`")
 	}
 }
