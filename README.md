@@ -18,11 +18,27 @@ import (
 )
 
 func main() {
-    data := []float64{5, 4, 3, 2, 1}
-    fmt.Println(statistics.Sort(data, false))
+    d := statistics.Array{
+		Data: []float64{5, 4, 3, 2, 1},
+    }
+	d.Sort(false) // Sorting array
+	fmt.Println(d.Data)
+	
+	// Find median
+	fmt.Println(d.Median())
 }
 ```
 Output
 ```
 1 2 3 4 5
+3
+```
+
+# Run example
+
+I have a make example file go in folder running.
+
+To run the program
+```bash
+go run running/main.go
 ```
